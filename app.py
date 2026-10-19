@@ -27,6 +27,14 @@ def tuning_curve(d, wl, tau):
         resp.append(reichardt(A, B, tau)[500:].mean())
     return speeds, resp
 
+def two_frame_test(sign, tau):
+    n = 200
+    A = np.zeros(n)
+    B = np.zeros(n)
+    A[20:70] = 1        # frame 1: bright dot at sensor A
+    B[70:120] = sign    # frame 2: dot at sensor B (+1 bright, -1 dark)
+    return reichardt(A, B, tau).sum(), A, B
+
 st.title("Fly Motion Detector")
 
 # 1. sliders first
@@ -44,4 +52,24 @@ ax.axhline(0, color="k")
 ax.set_xlabel("Stimulus speed (negative = leftward)")
 ax.set_ylabel("Mean detector output")
 st.pyplot(fig)
+
+st.header("Reverse-phi illusion")
+reverse = st.checkbox("Reverse contrast (reverse-phi)")
+sign = -1 if reverse else 1
+
+out, A, B = two_frame_test(sign, tau)   # tau comes from your slider
+
+if out > 0:
+    st.markdown("## → Rightward motion detected")
+else:
+    st.markdown("## ← Leftward motion detected")
+st.write(f"Detector output: {out:.2f}")
+
+fig2, ax2 = plt.subplots()
+ax2.plot(A, label="Sensor A")
+ax2.plot(B, label="Sensor B")
+ax2.set_xlabel("Time (ms)")
+ax2.set_ylabel("Light level")
+ax2.legend()
+st.pyplot(fig2)
 
