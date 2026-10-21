@@ -114,6 +114,6 @@ Files:
 ## Author
 
 **Fatima Zubair**
- M.Sc. Biophysics, University of Delhi
- Interested in computational neuroscience and neurodegenerative disease
+MSc Biophysics, University of Delhi
+Interested in computational neuroscience and neurodegenerative disease
  GitHub: [fatymazubair] · LinkedIn: [https://www.linkedin.com/in/fatimazubair29]
