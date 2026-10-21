@@ -42,10 +42,10 @@ tau = st.slider("Delay (s)", 0.01, 0.2, 0.05)
 d = st.slider("Sensor spacing", 0.05, 0.5, 0.2)
 wl = st.slider("Stripe width", 0.5, 2.0, 1.0)
 
-# 2. then compute using the slider values
+# 2. compute using the slider values
 speeds, resp = tuning_curve(d, wl, tau)
 
-# 3. then plot
+# 3. plot
 fig, ax = plt.subplots()
 ax.plot(speeds, resp)
 ax.axhline(0, color="k")
@@ -57,7 +57,7 @@ st.header("Reverse-phi illusion")
 reverse = st.checkbox("Reverse contrast (reverse-phi)")
 sign = -1 if reverse else 1
 
-out, A, B = two_frame_test(sign, tau)   # tau comes from your slider
+out, A, B = two_frame_test(sign, tau)   # tau comes from the slider
 
 if out > 0:
     st.markdown("## → Rightward motion detected")
