@@ -65,7 +65,7 @@ Rightward stripes give a positive output and leftward stripes give a negative on
 ### 2. The peak depends on temporal frequency, not speed alone
 When I changed the stripe width, the best speed changed too. What stayed fixed was speed divided by stripe width (temporal frequency, how many stripes pass a point per second). Real flies show this same kind of behaviour, which is a good sign the model captures something real.
 
-For example, with stripe width 1.0 the peak was at about 0.3 on the Y axis, with 2.0 it moved to 0.4 on the Y aixis.
+For example, with stripe width 1.0 the peak was at about 0.3 on the Y axis, with 2.0 it moved to 0.4 on the Y axis.
 
 ### 3. Reverse-phi: the detector can be fooled
 Reverse-phi is an illusion where a bright dot appears at one spot and then a *dark* dot appears at a neighbouring spot. You'd expect motion in one direction, but animals report motion in the opposite direction. This has been shown in humans and in flies.
@@ -91,17 +91,17 @@ Files:
 
 ## What I'd like to do next
 
-- Fit the delay and spacing to published fly data (a light machine learning step)
-- Add a more realistic version with separate ON (T4) and OFF (T5) pathways
-- Add a 2D version with four directions
-- Compare against a different motion model, such as the motion energy model
+- Fit the delay and spacing to published fly data (a light machine learning step).
+- Add a more realistic version with separate ON (T4) and OFF (T5) pathways.
+- Add a 2D version with four directions.
+- Compare against a different motion model, such as the motion energy model.
 
 ## What I learned
 
-- How to turn a neural circuit into a few lines of code
-- How to read tuning curves, and why neuroscientists use them
-- How to build and deploy a Streamlit app
-- That a clean illusion can tell you how a system works inside
+- How to turn a neural circuit into a few lines of code.
+- How to read tuning curves, and why neuroscientists use them.
+- How to build and deploy a Streamlit app.
+- That a clean illusion can tell you how a system works inside.
 - The Reverse phi phenomenon took me a little while to understand. I had to think as a fly and then go back and forth between the fly and the moving object itself.
 - At first the slider plot was stuck. I figured out it was because the calculation was above the slider. 
 
